@@ -1,0 +1,75 @@
+#------------------------------------------------------------
+#        Script MySQL.
+#------------------------------------------------------------
+
+USE school;
+
+#------------------------------------------------------------
+# Table: teachers
+#------------------------------------------------------------
+
+CREATE TABLE teachers(
+        teacherId Int  Auto_increment  NOT NULL ,
+        lastname  Varchar (50) NOT NULL ,
+        firstname Varchar (50) NOT NULL ,
+        mail      Varchar (50) NOT NULL
+	,CONSTRAINT teachers_PK PRIMARY KEY (teacherId)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: subjects
+#------------------------------------------------------------
+
+CREATE TABLE subjects(
+        subjectId Int  Auto_increment  NOT NULL ,
+        title     Varchar (50) NOT NULL
+	,CONSTRAINT subjects_PK PRIMARY KEY (subjectId)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: classes
+#------------------------------------------------------------
+
+CREATE TABLE classes(
+        classId   Int  Auto_increment  NOT NULL ,
+        title     Varchar (50) NOT NULL ,
+        teacherId Int NOT NULL
+	,CONSTRAINT classes_PK PRIMARY KEY (classId)
+
+	,CONSTRAINT classes_teachers_FK FOREIGN KEY (teacherId) REFERENCES teachers(teacherId)
+	,CONSTRAINT classes_teachers_AK UNIQUE (teacherId)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: students
+#------------------------------------------------------------
+
+CREATE TABLE students(
+        studentId Int  Auto_increment  NOT NULL ,
+        lastname  Varchar (50) NOT NULL ,
+        firstname Varchar (50) NOT NULL ,
+        classId   Int NOT NULL
+	,CONSTRAINT students_PK PRIMARY KEY (studentId)
+
+	,CONSTRAINT students_classes_FK FOREIGN KEY (classId) REFERENCES classes(classId)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: notes
+#------------------------------------------------------------
+
+CREATE TABLE notes(
+        notesId   Int  Auto_increment  NOT NULL ,
+        note      Varchar (50) NOT NULL ,
+        subjectId Int NOT NULL ,
+        studentId Int NOT NULL
+	,CONSTRAINT notes_PK PRIMARY KEY (notesId)
+
+	,CONSTRAINT notes_subjects_FK FOREIGN KEY (subjectId) REFERENCES subjects(subjectId)
+	,CONSTRAINT notes_students0_FK FOREIGN KEY (studentId) REFERENCES students(studentId)
+)ENGINE=InnoDB;
+

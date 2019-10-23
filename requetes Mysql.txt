@@ -1,0 +1,25 @@
+SELECT lastname, firstname FROM students WHERE classId = 3;
+
+Ex 01 : 
+SELECT students.lastname, students.firstname, notes.note, subjects.title
+FROM students
+INNER JOIN notes ON notes.studentId = students.studentId
+INNER JOIN subjects ON subjects.subjectId= notes.subjectId
+ORDER BY lastname;
+
+Ex 02 : 
+SELECT students.lastname, students.firstname, classes.title AS "classe de l'élève", AVG(notes.note) AS moyenne, teachers.firstname AS "prof principal"
+FROM students
+INNER JOIN classes ON classes.classId = students.classId
+INNER JOIN teachers ON teachers.teacherId = classes.teacherId
+INNER JOIN notes ON notes.studentId = students.studentId
+GROUP BY students.studentId
+ORDER BY students.firstname
+
+Ex 03 : 
+SELECT teachers.lastname, teachers.firstname, classes.title, students.lastname, students.firstname
+FROM students
+INNER JOIN classes ON classes.classId = students.classId
+INNER JOIN teachers ON teachers.teacherId = classes.teacherId
+ORDER BY classes.classId
+

@@ -1,0 +1,123 @@
+USE school;
+
+INSERT INTO teachers (lastname, firstname, mail)
+VALUES
+('Jean', 'Eudes', 'jean.eudes@gmail.com'),
+('Jean', 'Jacques', 'jean.jacques@gmail.com'),
+('Jean', 'Valjean', 'jean.valjean@gmail.com'),
+('Jean', 'Gilles', 'jean.gilles@gmail.com'),
+('Jean', 'Anousone', 'jean.anousone@gmail.com');
+
+INSERT INTO subjects (title)
+VALUES
+('Maths'),
+('Sport'),
+('Français'),
+('Anglais'),
+('Histoire'),
+('Géographie');
+
+INSERT INTO classes (title, teacherId)
+VALUES
+('CP', 1),
+('CE1', 2),
+('CE2', 3),
+('CM1', 4),
+('CM2', 5);
+
+INSERT INTO students (lastname, firstname, classId)
+VALUES
+('Marie', 'Jeanne', 1),
+('Marie', 'Poppins', 1),
+('Mary', 'Atoupri', 1),
+('Marie-Madeleine', 'De La Tour', 1),
+('Jeanne', 'Marie', 1),
+
+('Georges', 'Harrisson', 2),
+('Georges', 'Washington', 2),
+('Georges', 'Orwell', 2),
+('Georges', 'EstDoux', 2),
+('Georges', 'EstFrais', 2),
+
+('Blanche', 'Sombre', 3),
+('Billy', 'Bob', 3),
+('Mac', 'Lesgy', 3),
+('Arthur', 'H', 3),
+('Edouard', 'AuxMainsdArgent', 3),
+
+('Jim', 'Morrisson', 4),
+('Jim', 'Maurice', 4),
+('Jimmy', 'Tackery', 4),
+('Jack', 'TheRipper', 4),
+('Jacques', 'Chirac', 4),
+
+('Dave', 'Sinatra', 1),
+('Nancy', 'Sinatra', 1),
+('Franck', 'Sinatra', 1),
+('Herbert', 'Sinatra', 1),
+('Fabrizio', 'Sinatra', 1),
+
+('David', 'Holiday', 5),
+('David', 'Hasseloff', 5),
+('David', 'Etdjonatane', 5),
+('David', 'Copperfield', 5),
+('Deborah', 'Smoilatable', 5);
+
+INSERT INTO notes (note, subjectId, studentId)
+VALUES
+('8', 1, 1),
+('14', 2, 1),
+('10', 3, 1),
+('15', 4, 1),
+('9', 5, 1),
+('11', 1, 2),
+('12', 2, 2),
+('9', 3, 2),
+('18', 4, 2),
+('10', 5, 2),
+
+('11', 1, 3),
+('12', 2, 3),
+('9', 3, 3),
+('18', 4, 3),
+('10', 5, 3),
+('11', 1, 4),
+('12', 2, 4),
+('9', 3, 4),
+('18', 4, 4),
+('10', 5, 4),
+
+('11', 1, 5),
+('12', 2, 5),
+('9', 3, 5),
+('18', 4, 5),
+('10', 5, 5),
+('11', 1, 6),
+('12', 2, 6),
+('9', 3, 6),
+('18', 4, 6),
+('10', 5, 6),
+
+('11', 1, 7),
+('12', 2, 7),
+('9', 3, 7),
+('18', 4, 7),
+('10', 5, 7),
+('11', 1, 8),
+('12', 2, 8),
+('9', 3, 8),
+('18', 4, 8),
+('10', 5, 8),
+
+('11', 1, 9),
+('12', 2, 9),
+('9', 3, 9),
+('18', 4, 9),
+('10', 5, 9),
+('11', 1, 10),
+('12', 2, 10),
+('9', 3, 10),
+('18', 4, 10),
+('10', 5, 10);
+
+
